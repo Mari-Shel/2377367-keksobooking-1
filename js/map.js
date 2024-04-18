@@ -56,12 +56,11 @@ mainPinMarker.on('move', (evt) => {
   const addressLat = evt.target.getLatLng().lat.toFixed(5);
   const addressLng = evt.target.getLatLng().lng.toFixed(5);
   adress.value = `${ addressLat } ${ addressLng }`;
-
-  formElement.addEventListener('reset', () => {
-    mainPinMarker.setLatLng(L.latLng(COORDINATES_CENTER_TOKYO.lat, COORDINATES_CENTER_TOKYO.lng));
-  });
 });
 
+formElement.addEventListener('reset', () => {
+  mainPinMarker.setLatLng(L.latLng(COORDINATES_CENTER_TOKYO.lat, COORDINATES_CENTER_TOKYO.lng));
+});
 
 // СБРОС СОСТОЯНИЯ МАРКЕРА И КАРТЫ
 resetButton.addEventListener('click', () => {
